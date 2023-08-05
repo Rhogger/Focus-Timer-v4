@@ -1,5 +1,6 @@
 export default {
   isRunning: false,
   isLightTheme: true,
-  isMusicOn: false
+  isMusicOn: false,
+  musicSelected: null
 }

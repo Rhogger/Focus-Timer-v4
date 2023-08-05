@@ -59,7 +59,7 @@ function playMusic() {
   sounds.pauseAudio()
   removeSelectedStyle()
 
-  if (!state.isMusicOn) {
+  if (!state.isMusicOn || state.isMusicOn && musicClass != state.musicSelected) {
     let audio
 
     if (musicClass === 'forest') {
@@ -73,12 +73,15 @@ function playMusic() {
     }
 
     sounds.isSelected(card, audio)
-  } else {
+    state.musicSelected = musicClass
+    state.isMusicOn = true
+
+  } else if (musicClass === state.musicSelected) {
     sounds.pauseAudio()
     removeSelectedStyle()
+    state.isMusicOn = false
+    state.musicSelected = null
   }
-
-  state.isMusicOn = !state.isMusicOn
 }
 
 function toggleTheme() {

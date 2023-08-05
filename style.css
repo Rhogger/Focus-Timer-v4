@@ -139,6 +139,10 @@ ul {
   place-content: center;
 }
 
+.card:focus {
+  /* outline: 1px solid black; */
+}
+
 .card svg {
   width: clamp(26rem, 1vw + 26rem, 48rem);
 }
@@ -185,4 +189,17 @@ html:not(.dark-theme) .ph-moon {
 
 .selected svg path {
   fill: var(--selected-fill-icon-card);
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+
+  position: absolute;
+  overflow: hidden;
+
+  margin: -1px;
+  padding: 0;
+  border: none;
+  appearance: none;
 }

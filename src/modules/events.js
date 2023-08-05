@@ -20,6 +20,12 @@ function registerSounds() {
   soundCards.addEventListener('click', (event) => {
     executeAction(event)
   })
+
+  soundCards.addEventListener('keypress', (event) => {
+    if (event.key == ' ') {
+      executeAction(event)
+    }
+  })
 }
 
 function controlThemes() {

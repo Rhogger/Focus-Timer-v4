@@ -1,5 +1,3 @@
-import state from '../modules/state.js'
-
 export default function Sounds({
   forestAudio,
   rainAudio,
@@ -14,10 +12,8 @@ export default function Sounds({
   }
 
   function isSelected(card, audio) {
-    if (!state.isMusicOn) {
-      card.classList.add('selected')
-      audio.play()
-    }
+    card.classList.add('selected')
+    audio.play()
   }
 
   return {

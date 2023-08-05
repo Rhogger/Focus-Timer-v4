@@ -24,9 +24,9 @@
 <body>
   <main>
     <div class="themes">
-      <button class="ph ph-sun" data-action="toggleTheme"></button>
-      <button class="ph ph-moon" data-action="toggleTheme"></button>
-      <!-- <span>Ativar/desativar dark mode</span> -->
+      <button class="ph ph-sun" data-action="toggleTheme" tabindex="1"></button>
+      <button class="ph ph-moon" data-action="toggleTheme" tabindex="1"></button>
+      <span class="sr-only">Ativar/desativar dark mode</span>
     </div>
 
     <section class="timer">
@@ -39,23 +39,23 @@
       <div class="controls">
         <ul class="buttons">
           <li id="play">
-            <button data-action="toggleRunning" class='bx bx-play-circle'></button>
+            <button data-action="toggleRunning" class='bx bx-play-circle' tabindex="2"></button>
           </li>
 
           <li id="pause">
-            <button data-action="toggleRunning" class='bx bx-pause-circle'></button>
+            <button data-action="toggleRunning" class='bx bx-pause-circle' tabindex="2"></button>
           </li>
 
           <li id="stop">
-            <button data-action="resetTimer" class='bx bx-stop-circle'></button>
+            <button data-action="resetTimer" class='bx bx-stop-circle' tabindex="3"></button>
           </li>
 
           <li id="more-minutes">
-            <button data-action="addMinutes" class='bx bx-plus-circle'></button>
+            <button data-action="addMinutes" class='bx bx-plus-circle' tabindex="4"></button>
           </li>
 
           <li id="less-minutes">
-            <button data-action="removeMinutes" class='bx bx-minus-circle'></button>
+            <button data-action="removeMinutes" class='bx bx-minus-circle' tabindex="5"></button>
           </li>
         </ul>
       </div>
@@ -63,7 +63,7 @@
 
     <section class="sounds">
       <ul class="cards">
-        <li class="card forest" id="forest" data-action="playMusic">
+        <li class="card forest" id="forest" data-action="playMusic" tabindex="6">
           <svg width="45" height="56" viewBox="0 0 45 56" fill="none" xmlns="http://www.w3.org/2000/svg"
             data-action="playMusic" class="forest">
             <path
@@ -72,7 +72,7 @@
           </svg>
         </li>
 
-        <li class="card rain" id="rain" data-action="playMusic">
+        <li class="card rain" id="rain" data-action="playMusic" tabindex="7">
           <svg width="53" height="56" viewBox="0 0 53 56" fill="none" xmlns="http://www.w3.org/2000/svg"
             data-action="playMusic" class="rain">
             <path
@@ -81,7 +81,7 @@
           </svg>
         </li>
 
-        <li class="card coffee" id="coffee" data-action="playMusic">
+        <li class="card coffee" id="coffee" data-action="playMusic" tabindex="8">
           <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg"
             data-action="playMusic" class="coffee">
             <path
@@ -90,7 +90,7 @@
           </svg>
         </li>
 
-        <li class="card fireplace" id="fireplace" data-action="playMusic">
+        <li class="card fireplace" id="fireplace" data-action="playMusic" tabindex="9">
           <svg width="48" height="56" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg"
             data-action="playMusic" class="fireplace">
             <path
