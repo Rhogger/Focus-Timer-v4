@@ -10,22 +10,27 @@ import {
   rainAudio,
   coffeeStoreAudio,
   fireplaceAudio,
+  buttonPressAudio,
+  finishTimerAudio,
 } from './src/modules/elements.js'
 import Timer from './src/factories/timer.js'
 import Sounds from './src/factories/sounds.js'
 import * as events from './src/modules/events.js'
 
-export const timer = Timer({
-  time,
-  minutesDisplay,
-  secondsDisplay,
-})
-
 export const sounds = Sounds({
+  buttonPressAudio,
+  finishTimerAudio,
   forestAudio,
   rainAudio,
   coffeeStoreAudio,
   fireplaceAudio,
+})
+
+export const timer = Timer({
+  sounds,
+  time,
+  minutesDisplay,
+  secondsDisplay,
 })
 
 export function removeSelectedStyle() {

@@ -5,7 +5,7 @@
 }
 
 :root {
-  font-size: 6.25%;
+  font-size: clamp(4.5%, 3% + 3vw, 6.25%);
 
   --bg-color: hsl(0, 0%, 100%);
   --primary-color: hsl(240, 6%, 21%);
@@ -15,12 +15,6 @@
   --selected-card-color: hsl(194, 97%, 31%);
   --fill-icon-card: hsl(240, 6%, 21%);
   --selected-fill-icon-card: hsl(0, 0%, 100%);
-
-  --width-card: clamp(80rem, 3vw + 80rem, 152rem);
-  --height-card: clamp(72rem, 3vw + 72rem, 138rem);
-  --size-card-svg: clamp(40rem, 1vw+ 40rem, 56rem);
-  --size-button-control: clamp(26rem, 2vw + 26rem, 48rem);
-  --button-size: clamp(36rem, 2vw + 34rem, 50rem);
 }
 
 .dark-theme {
@@ -31,13 +25,6 @@
   --hover-card-color: hsla(196, 74%, 15%, 0.603);
   --selected-card-color: hsl(195, 74%, 15%);
   --fill-icon-card: hsl(240, 7%, 78%);
-  --selected-fill-icon-card: hsl(0, 0%, 100%);
-
-  --width-card: clamp(80rem, 3vw + 80rem, 152rem);
-  --height-card: clamp(72rem, 3vw + 72rem, 138rem);
-  --size-card-svg: clamp(40rem, 1vw+ 40rem, 56rem);
-  --size-button-control: clamp(26rem, 2vw + 26rem, 48rem);
-  --button-size: clamp(36rem, 2vw + 34rem, 50rem);
 }
 
 body {
@@ -54,7 +41,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: clamp(90rem, 4vw + 90rem, 192rem);
+  gap: 197rem;
 
   padding: 15rem;
 }
@@ -63,7 +50,7 @@ button {
   background-color: transparent;
   border: none;
 
-  font-size: clamp(40rem, 42rem + 1vw, 55rem);
+  font-size: 48rem;
   color: var(--primary-color);
 }
 
@@ -106,13 +93,13 @@ button {
 .countdown span {
   color: var(--primary-color);
   text-align: center;
-  font-size: clamp(80rem, 2vw + 80rem, 126rem);
+  font-size: 126rem;
 }
 
 .controls .buttons {
   display: flex;
   justify-content: center;
-  gap: clamp(20rem, 2vw + 14rem, 40rem);
+  gap: 40rem;
 }
 
 .buttons li button {
@@ -125,9 +112,9 @@ ul {
 
 .cards {
   display: grid;
-  grid-template-rows: var(--width-card) var(--width-card);
-  grid-template-columns: var(--height-card) var(--height-card);
-  gap: clamp(14rem, 1vw + 14rem, 32rem);
+  grid-template-columns: 138rem 138rem;
+  grid-template-rows: 152rem 152rem;
+  gap: 32rem;
 }
 
 .card {
@@ -135,37 +122,73 @@ ul {
 
   border-radius: 24rem;
 
-  display: grid;
-  place-content: center;
-}
-
-.card:focus {
-  /* outline: 1px solid black; */
-}
-
-.card svg {
-  width: clamp(26rem, 1vw + 26rem, 48rem);
-}
-
-.card svg path {
-  fill: var(--fill-icon-card);
+  display: flex;
+  flex-direction: column;
+  gap: 32rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .card:hover {
   background-color: var(--hover-card-color);
 }
 
+.card svg {
+  height: 56rem;
+}
+
+.card svg path {
+  fill: var(--fill-icon-card);
+}
+
 .card:hover svg path {
   fill: var(--fill-icon-card);
 }
 
-#play,
-#pause,
-#stop,
-#more-minutes,
-#less-minutes,
+.volume {
+  -webkit-appearance: none;
+
+  background-color: var(--primary-color);
+
+  width: 90rem;
+  height: 4rem;
+
+  border-radius: 9px;
+  outline: none;
+}
+
+.volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+
+  background-color: var(--primary-color);
+
+  width: 16rem;
+  height: 16rem;
+
+  border-radius: 50%;
+}
+
+.volume::-moz-range-thumb,
+.volume::-ms-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+
+  background: #2796ee;
+  cursor: pointer;
+}
+
+.controls .buttons li button,
 .card {
   cursor: pointer;
+}
+
+/* Animações */
+
+body {
+  transition: background-color .6s ease;
 }
 
 
@@ -189,6 +212,11 @@ html:not(.dark-theme) .ph-moon {
 
 .selected svg path {
   fill: var(--selected-fill-icon-card);
+}
+
+.selected .volume,
+.selected .volume::-webkit-slider-thumb {
+  background-color: var(--selected-fill-icon-card);
 }
 
 .sr-only {

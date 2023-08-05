@@ -1,4 +1,8 @@
+import { resetTimer } from "../modules/actions.js"
+import state from "../modules/state.js"
+
 export default function Timer({
+  sounds,
   time,
   minutesDisplay,
   secondsDisplay,
@@ -9,35 +13,40 @@ export default function Timer({
 
   function countdown() {
     time.idCountdown = setTimeout(function () {
+      if (!state.isRunning) return
+
       minutes = Number(minutesDisplay.textContent)
       seconds = Number(secondsDisplay.textContent)
-
-      const timeOver = minutes === 0 && seconds === 0
-
-      if (timeOver) {
-        stop()
-        return
-      }
 
       if (seconds <= 0) {
         seconds = 60
         minutes--
       }
 
-      seconds--
-
       if (minutes < 0) {
+        resetTimer()
+        sounds.finishTimer()
         return
       }
 
-      updateCountdownDisplay(minutes, seconds)
+      seconds--
+
+      updateDisplay(minutes, seconds)
       countdown()
     }, 1000)
   }
 
-  function updateCountdownDisplay(minutes, seconds) {
+  function updateDisplay(minutes, seconds) {
+    minutes = minutes ?? time.minutes
+    seconds = seconds ?? time.seconds
+
     minutesDisplay.textContent = String(minutes).padStart(2, '0')
     secondsDisplay.textContent = String(seconds).padStart(2, '0')
+    updateTitlePage(minutesDisplay.textContent, secondsDisplay.textContent)
+  }
+
+  function updateTitlePage(minutes, seconds) {
+    document.title = `Timer - ${minutes}:${seconds}`
   }
 
   function getMinutes() {
@@ -72,14 +81,14 @@ export default function Timer({
 
   function stop() {
     clearTimeout(time.idCountdown)
-    updateCountdownDisplay(time.minutes, time.seconds)
+    updateDisplay(time.minutes, time.seconds)
     setMinutes()
     setSeconds()
   }
 
   return {
     countdown,
-    updateCountdownDisplay,
+    updateDisplay,
     getMinutes,
     getSeconds,
     addMinutes,

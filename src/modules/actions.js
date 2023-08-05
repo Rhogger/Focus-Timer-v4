@@ -19,13 +19,13 @@ function toggleRunning() {
   if (state.isRunning) timer.countdown()
   else clearTimeout(time.idCountdown)
 
+  sounds.buttonPress()
 }
 
 function resetTimer() {
-  if (state.isRunning) {
-    timer.stop()
-    state.isRunning = appState.classList.toggle('running')
-  }
+  timer.stop()
+  if (state.isRunning) appState.classList.toggle('running')
+  sounds.buttonPress()
 }
 
 function addMinutes() {
@@ -33,10 +33,10 @@ function addMinutes() {
 
   if (!totalSeconds && (time.minutes * 60 + time.seconds <= 3300)) {
     timer.addMinutes()
-    timer.updateCountdownDisplay(time.minutes, time.seconds)
+    timer.updateDisplay()
   } else if (totalSeconds <= 3300) {
     timer.addMinutes()
-    timer.updateCountdownDisplay(timer.getMinutes(), timer.getSeconds())
+    timer.updateDisplay(timer.getMinutes(), timer.getSeconds())
   }
 }
 
@@ -45,10 +45,10 @@ function removeMinutes() {
 
   if (!totalSeconds && (time.minutes * 60 + time.seconds > 300)) {
     timer.removeMinutes()
-    timer.updateCountdownDisplay(time.minutes, time.seconds)
+    timer.updateDisplay()
   } else if (timer.getMinutes() * 60 + timer.getSeconds() > 300) {
     timer.removeMinutes()
-    timer.updateCountdownDisplay(timer.getMinutes(), timer.getSeconds())
+    timer.updateDisplay(timer.getMinutes(), timer.getSeconds())
   }
 }
 
