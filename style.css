@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 6.25%;
+
+  --bg-color: hsl(0, 0%, 100%);
+  --primary-color: hsl(240, 6%, 21%);
+  --controls-color: hsl(240, 6%, 21%);
+  --card-color: hsl(240, 9%, 89%);
+  --hover-card-color: hsla(194, 97%, 31%, 0.603);
+  --selected-card-color: hsl(194, 97%, 31%);
+  --fill-icon-card: hsl(240, 6%, 21%);
+  --selected-fill-icon-card: hsl(0, 0%, 100%);
+
+  --width-card: clamp(80rem, 3vw + 80rem, 152rem);
+  --height-card: clamp(72rem, 3vw + 72rem, 138rem);
+  --size-card-svg: clamp(40rem, 1vw+ 40rem, 56rem);
+  --size-button-control: clamp(26rem, 2vw + 26rem, 48rem);
+  --button-size: clamp(36rem, 2vw + 34rem, 50rem);
+}
+
+.dark-theme {
+  --bg-color: hsl(240, 5%, 7%);
+  --primary-color: hsl(0, 0%, 100%);
+  --controls-color: hsl(240, 7%, 78%);
+  --card-color: hsl(240, 6%, 17%);
+  --hover-card-color: hsla(196, 74%, 15%, 0.603);
+  --selected-card-color: hsl(195, 74%, 15%);
+  --fill-icon-card: hsl(240, 7%, 78%);
+  --selected-fill-icon-card: hsl(0, 0%, 100%);
+
+  --width-card: clamp(80rem, 3vw + 80rem, 152rem);
+  --height-card: clamp(72rem, 3vw + 72rem, 138rem);
+  --size-card-svg: clamp(40rem, 1vw+ 40rem, 56rem);
+  --size-button-control: clamp(26rem, 2vw + 26rem, 48rem);
+  --button-size: clamp(36rem, 2vw + 34rem, 50rem);
+}
+
+body {
+  background-color: var(--bg-color);
+
+  font-family: Roboto;
+
+  height: 100vh;
+}
+
+main {
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(90rem, 4vw + 90rem, 192rem);
+
+  padding: 15rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+
+  font-size: clamp(40rem, 42rem + 1vw, 55rem);
+  color: var(--primary-color);
+}
+
+.themes {
+  position: absolute;
+  top: 60rem;
+  right: 60rem;
+}
+
+.themes button {
+  font-size: 44rem;
+}
+
+.timer {
+  display: grid;
+  place-content: center;
+  gap: 17rem;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+}
+
+.countdown,
+.countdown span {
+  -webkit-touch-callout: none;
+  /* iPhone OS, Safari */
+  -webkit-user-select: none;
+  /* Chrome, Safari 3 */
+  -khtml-user-select: none;
+  /* Safari 2 */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+ */
+  user-select: none;
+}
+
+.countdown span {
+  color: var(--primary-color);
+  text-align: center;
+  font-size: clamp(80rem, 2vw + 80rem, 126rem);
+}
+
+.controls .buttons {
+  display: flex;
+  justify-content: center;
+  gap: clamp(20rem, 2vw + 14rem, 40rem);
+}
+
+.buttons li button {
+  color: var(--controls-color);
+}
+
+ul {
+  list-style: none;
+}
+
+.cards {
+  display: grid;
+  grid-template-rows: var(--width-card) var(--width-card);
+  grid-template-columns: var(--height-card) var(--height-card);
+  gap: clamp(14rem, 1vw + 14rem, 32rem);
+}
+
+.card {
+  background-color: var(--card-color);
+
+  border-radius: 24rem;
+
+  display: grid;
+  place-content: center;
+}
+
+.card svg {
+  width: clamp(26rem, 1vw + 26rem, 48rem);
+}
+
+.card svg path {
+  fill: var(--fill-icon-card);
+}
+
+.card:hover {
+  background-color: var(--hover-card-color);
+}
+
+.card:hover svg path {
+  fill: var(--fill-icon-card);
+}
+
+#play,
+#pause,
+#stop,
+#more-minutes,
+#less-minutes,
+.card {
+  cursor: pointer;
+}
+
+
+
+/* Classes de estados da aplicação */
+
+.running #play,
+.dark-theme .ph-sun,
+html:not(.running) #pause,
+html:not(.dark-theme) .ph-moon {
+  display: none;
+}
+
+
+
+/* Classes utilitárias */
+
+.selected {
+  background-color: var(--selected-card-color);
+}
+
+.selected svg path {
+  fill: var(--selected-fill-icon-card);
+}
