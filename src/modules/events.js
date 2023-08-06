@@ -5,6 +5,14 @@ import {
   rainCard,
   coffeeCard,
   fireplaceCard,
+  forestAudio,
+  rainAudio,
+  coffeeStoreAudio,
+  fireplaceAudio,
+  forestVolume,
+  rainVolume,
+  coffeeVolume,
+  fireplaceVolume,
   soundCards
 } from './elements.js'
 import * as actions from './actions.js'
@@ -26,6 +34,23 @@ function registerSounds() {
       executeAction(event)
     }
   })
+
+  forestVolume.addEventListener('input', () => {
+    forestAudio.volume = Number(forestVolume.value) / 100
+  })
+
+  rainVolume.addEventListener('input', () => {
+    rainAudio.volume = Number(rainVolume.value) / 100
+  })
+
+  coffeeVolume.addEventListener('input', () => {
+    coffeeStoreAudio.volume = Number(coffeeVolume.value) / 100
+  })
+
+  fireplaceVolume.addEventListener('input', () => {
+    fireplaceAudio.volume = Number(fireplaceVolume.value) / 100
+  })
+
 }
 
 function controlThemes() {

@@ -21,6 +21,10 @@ const fireplaceCard = document.querySelector('#fireplace')
 const forestAudio = new Audio('../assets/audios/Forest.wav')
 const rainAudio = new Audio('../assets/audios/Rain.wav')
 const coffeeStoreAudio = new Audio('../assets/audios/CoffeeStore.wav')
+const forestVolume = document.querySelector('#forest-volume')
+const rainVolume = document.querySelector('#rain-volume')
+const coffeeVolume = document.querySelector('#coffee-volume')
+const fireplaceVolume = document.querySelector('#fireplace-volume')
 const fireplaceAudio = new Audio('../assets/audios/Fireplace.wav')
 const buttonPressAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true")
 const finishTimerAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true")
@@ -46,6 +50,10 @@ export {
   rainAudio,
   coffeeStoreAudio,
   fireplaceAudio,
+  forestVolume,
+  rainVolume,
+  coffeeVolume,
+  fireplaceVolume,
   buttonPressAudio,
   finishTimerAudio,
 }

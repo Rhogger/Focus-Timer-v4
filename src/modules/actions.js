@@ -55,9 +55,16 @@ function removeMinutes() {
 function playMusic() {
   const musicClass = event.target.classList.length === 1 ? event.target.classList[0] : event.target.classList[1]
   const card = document.getElementById(musicClass)
+  let range
 
   sounds.pauseAudio()
   removeSelectedStyle()
+
+  if (state.musicSelected != null) {
+    range = document.querySelector(`#${state.musicSelected}-volume`)
+    console.log(range);
+    range.value = 0
+  }
 
   if (!state.isMusicOn || state.isMusicOn && musicClass != state.musicSelected) {
     let audio
@@ -73,6 +80,8 @@ function playMusic() {
     }
 
     sounds.isSelected(card, audio)
+    range = document.querySelector(`#${musicClass}-volume`)
+    range.value = 50
     state.musicSelected = musicClass
     state.isMusicOn = true
 

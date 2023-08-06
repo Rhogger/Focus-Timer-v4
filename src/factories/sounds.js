@@ -24,6 +24,7 @@ export default function Sounds({
   function isSelected(card, audio) {
     card.classList.add('selected')
     audio.play()
+    audio.volume = 0.5
   }
 
   return {
