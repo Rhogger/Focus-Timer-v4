@@ -26,16 +26,15 @@
 
 ## 💻 Projeto <a name = "projeto"></a>
 
-Projeto criado durante o 3° Módulo do Stage 5 do Explorer, sendo ele, a 2° versão de um Timer estilo
+Projeto criado durante o 4° Módulo do Stage 5 do Explorer, sendo ele, a 4° versão de um Timer estilo
 pomodoro.
 
 Objetivo dessa aplicação é utilizar do contador para realizar suas tarefas até o tempo acabar. A
 aplicação conta com botões de controles, como adicionar e retirar 5 minutos, play, pause e stop, e
 também audios de fundo.
 
-Adquiri conhecimentos de desestruturação de dados, padrão de design Factory, modularização,
-estruturação de dados, manipulação de eventos e audios, técnicas na prática de como fazer um código
-limpo, refatoração e aprimorando os conhecimentos do ES6.
+Fortaleci meus conhecimentos de Factory, modularização, estruturação de dados, manipulação de DOM,
+eventos e audios, prática de clean code, refatoração ,ES6 e aprendi a fazer data-set.
 
 <br>
 <br>
@@ -52,7 +51,7 @@ limpo, refatoração e aprimorando os conhecimentos do ES6.
 ## 🔖 Layout <a name = "layout"></a>
 
 Você pode visualizar o layout do projeto através
-[DESSE LINK](<https://www.figma.com/file/njqMUGMJewJk8vTG7KJrAt/Stage-05---Focus-Timer-2.0-(Copy)?type=design&node-id=0%3A1&mode=design&t=JMMPc4yF2OYKAufU-1>).
+[DESSE LINK](<https://www.figma.com/file/xFj5XaJhQm3W9eYIdEX7WR/Stage-05---Dark-Mode-FocusTimer-(Copy)?type=design&node-id=0%3A8&mode=design&t=SclzND96FncXatsT-1>).
 É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
 
 <br>
