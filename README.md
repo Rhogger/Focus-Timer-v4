@@ -1,4 +1,4 @@
-<h1 align="center">Focus Timer v4</h1>
+<h1 align="center">Focus Timer 4.0</h1>
 
 <div align="center">
 
